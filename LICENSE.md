@@ -10,11 +10,6 @@ furnished to do so, subject to the following conditions:
 The Antwep City brand logo is a registered trademark that can not be used
 without prior permission from the city administration.
 
-The font family ‘Antwerpen' can only be used with permission from the city
-administration. Both can only be used in conformity with the branding
-guidelines and the visual identity of the city of Antwerp. Contact us via
-e-mail: branding@stad.antwerpen.be
-
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
