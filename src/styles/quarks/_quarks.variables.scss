@@ -4,9 +4,12 @@
  */
 
 
-$font-family-base: 'Source Sans Pro' sans-serif;
-$font-family-headings: 'Source Sans Pro' sans-serif;
-$font-family-monospace: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
+// $font-family-base: 'Source Sans Pro' sans-serif;
+// $font-family-headings: 'Source Sans Pro' sans-serif;
+// $font-family-monospace: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-headings: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 $brand-primary: #347ea6;
 $brand-secondary: #5fb1d6;
 $normal: 700;
