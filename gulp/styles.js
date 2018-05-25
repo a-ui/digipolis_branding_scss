@@ -24,7 +24,12 @@ var license = require('gulp-header-license');
 var fs = require('fs');
 
 var cssNano = [
-    cssnano()
+    cssnano({
+        discardComments: {
+            removeAllButFirst: true
+        },
+        discardUnused: false
+    })
 ];
 
 var autoPrefixer = [
@@ -34,9 +39,7 @@ var autoPrefixer = [
 var sassOptions = {
     outputStyle: 'expanded',
     sourceComments: false,
-    includePaths: [
-        './node_modules'
-    ]
+    includePaths: ['node_modules'],
 }
 
 var sourcemapOptions = {
@@ -61,20 +64,27 @@ gulp.task('sass', function () {
 
 gulp.task('sass-dist', function(){
 
+    // Get package version to generate correct font url
+    var nodePackageFile = JSON.parse(fs.readFileSync(__dirname + '/../package.json'));
+    var nodePackageVersion = nodePackageFile.version;
+    var nodePackageDescription = nodePackageFile.description;
+
     return gulp.src(['src/styles/**/*.scss', '!src/styles/**/styleguide.scss'])
         .pipe(plumber())
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(mergeMediaQueries({ use_external: false }))
         .pipe(postcss(autoPrefixer))
+        .pipe(license('/*\n' + fs.readFileSync('LICENSE.md', 'utf8') + '*/'))
         .pipe(cssUrlAdjuster({
-            replace:  ['../../fonts','assets/fonts'],
+            replace:  ['../../fonts', 'assets/fonts'],
+            prepend: 'https:///cdn.antwerpen.be/' + nodePackageDescription + '/' + nodePackageVersion + '/'
         }))
         .pipe(gulp.dest('dist'))
         .pipe(sourcemaps.init())
-        .pipe(postcss(cssNano))
-        .pipe(license('/*\n' + fs.readFileSync('LICENSE.md', 'utf8') + '*/'))
         .pipe(gulp.dest('./dist/'))
         .pipe(rename({extname: '.min.css'}))
+        .pipe(postcss(cssNano))
+        .pipe(license('/*\n' + fs.readFileSync('LICENSE.md', 'utf8') + '*/'))
         .pipe(sourcemaps.write("./", sourcemapOptions))
         .pipe(gulp.dest('dist'));
 });
