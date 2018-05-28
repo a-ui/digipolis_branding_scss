@@ -16,7 +16,7 @@ var fileSystem = require('fs');
 
 var clean = require('./gulp/clean'),
 	copy = require('./gulp/copy'),
-	copy = require('./gulp/iconfont'),
+	iconfont = require('./gulp/iconfont'),
 	git = require('./gulp/git'),
 	semver = require('./gulp/semver'),
 	server = require('./gulp/server'),
