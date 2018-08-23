@@ -18,11 +18,23 @@ You can even import it directly in your (S)CSS:
 @import url("https://cdn.antwerpen.be/digipolis_branding_scss/2.1.0/main.min.css");
 ```
 
-> We adopt semantic versioning. If you want to use another version of the ACPaaS Branding you can do so by adjusting the version in the URL address. See the changelog for all available versions.
+> We adopt semantic versioning. If you want to use another version of the Digipolis Branding you can do so by adjusting the version in the URL address. See the changelog for all available versions.
 
 You can also install everything with npm:
 
 npm install @a-ui/digipolis --save
+
+Then, you can import everything in your Sass setup (`main.min.css` also available):
+
+```
+@import '@a-ui/digipolis/dist/main.css';
+```
+
+In order to extend our style kit you can make use of our Sass variables. Import them like this:
+
+```
+@import '@a-ui/digipolis/dist/assets/styles/_quarks.scss';
+```
 
 ## Development
 
