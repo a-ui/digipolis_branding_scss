@@ -1,8 +1,28 @@
 # Digipolis Branding
 
-> This project contains Digipolis' new digital styling and styling guidelines. It is the starting point to style your app or website for Digipolis.
+This project contains Digipolis' new digital styling and styling guidelines. It is the starting point to style your app or website for Digipolis.
 
 As you probably noticed, this project is just released. More documentation will be released very soon!
+
+## Getting started
+
+In its simplest form you can just include the following line in the `<head>` section of your app.
+
+```
+<link rel="stylesheet" href="https://cdn.antwerpen.be/digipolis_branding_scss/2.1.0/main.min.css">
+```
+
+You can even import it directly in your (S)CSS:
+
+```
+@import url("https://cdn.antwerpen.be/digipolis_branding_scss/2.1.0/main.min.css");
+```
+
+> We adopt semantic versioning. If you want to use another version of the ACPaaS Branding you can do so by adjusting the version in the URL address. See the changelog for all available versions.
+
+You can also install everything with npm:
+
+npm install @a-ui/digipolis --save
 
 ## Development
 
