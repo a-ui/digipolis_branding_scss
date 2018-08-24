@@ -1,8 +1,6 @@
 # Digipolis Branding
 
-This project contains Digipolis' new digital styling and styling guidelines. It is the starting point to style your app or website for Digipolis.
-
-As you probably noticed, this project is just released. More documentation will be released very soon!
+This project contains Digipolis' digital styling and styling guidelines. It is the starting point to style your app or website for Digipolis.
 
 ## Getting started
 
