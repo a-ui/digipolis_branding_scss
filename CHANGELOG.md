@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### Fixed
+- Fixed an issue where FontAwesome icons were not showing
+
 ## [2.1.0] - 2018-08-20
 ### Changed
 - Updated to Core Branding v2.3.0
