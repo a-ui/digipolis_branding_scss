@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## [3.0.0] - 2018-10-08
+### Changed
+- [BREAKING] Added AUI-kit as part of the Digipolis branding
+
+
 ## [2.1.1] - 2018-10-04
 ### Fixed
 - Fixed an issue where FontAwesome icons were not showing
@@ -37,6 +42,7 @@
 - Initial release.
 
 
+[3.0.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v3.0.0
 [2.1.1]: https://github.com/a-ui/digipolis_branding_scss/tree/v2.1.1
 [2.1.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v2.1.0
 [2.0.1]: https://github.com/a-ui/digipolis_branding_scss/tree/v2.0.1
