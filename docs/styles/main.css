@@ -4103,12 +4103,12 @@ dl {
 }
 
 .m-button-group > .a-button {
-	border-top: 1px solid #2c6b8d;
+	border-right: 1px solid #2c6b8d;
 	margin-top: -1px;
 }
 
-.m-button-group > .a-button:not(:last-child) {
-	border-right: 1px solid #2c6b8d;
+.m-button-group > .a-button:last-child {
+	border-right: none;
 }
 
 .m-button-group > .a-button.a-button--secondary {
@@ -4133,15 +4133,34 @@ dl {
 
 .m-button-group > .a-button-outline {
 	margin-bottom: -1px;
-}
-
-.m-button-group > .a-button-outline:not(:last-child) {
 	margin-right: -1px;
 }
 
+.m-button-group > .a-button-outline:last-child {
+	margin-right: 0;
+}
+
 .m-button-group > .a-button-outline:not([disabled]):hover,
-.m-button-group > .a-button-outline:not([disabled]):active {
+.m-button-group > .a-button-outline:not([disabled]):active,
+.m-button-group > .a-button-outline:not([disabled]):focus {
 	z-index: 1;
+}
+
+.m-button-group--vertical {
+	-ms-flex-direction: column;
+	    flex-direction: column;
+}
+
+.m-button-group--vertical > .a-button {
+	border-right: none;
+}
+
+.m-button-group--vertical > .a-button:not(:first-child) {
+	border-top: 1px solid #2c6b8d;
+}
+
+.m-button-group--vertical > .a-button-outline {
+	margin-right: 0;
 }
 
 /**

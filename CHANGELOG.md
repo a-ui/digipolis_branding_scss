@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.2.0] - 2019-04-08
+### Added
+- Added vertical button group
+
+### Fixed
+- Fixed a small layout issue in (horizontal) button groups
+
+
 ## [3.1.0] - 2019-02-07
 ### Added
 - Added support for multiple lines of text in buttons
@@ -55,6 +63,7 @@
 - Initial release.
 
 
+[3.2.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v3.2.0
 [3.1.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v3.1.0
 [3.0.2]: https://github.com/a-ui/digipolis_branding_scss/tree/v3.0.2
 [3.0.1]: https://github.com/a-ui/digipolis_branding_scss/tree/v3.0.1
