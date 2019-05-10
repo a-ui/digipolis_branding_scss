@@ -1,5 +1,10 @@
 # Changelog
 
+## [3.2.1] - 2019-05-10
+### Fixed
+- Fixed cookie consent not hiding when consented
+
+
 ## [3.2.0] - 2019-04-08
 ### Added
 - Added vertical button group
@@ -63,6 +68,7 @@
 - Initial release.
 
 
+[3.2.1]: https://github.com/a-ui/digipolis_branding_scss/tree/v3.2.1
 [3.2.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v3.2.0
 [3.1.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v3.1.0
 [3.0.2]: https://github.com/a-ui/digipolis_branding_scss/tree/v3.0.2
