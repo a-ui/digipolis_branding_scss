@@ -1,27 +1,31 @@
 // -------------------------------------------------------------------
 // :: SASS
 // -------------------------------------------------------------------
-// - https://www.npmjs.org/package/gulp-plumber
 // - https://www.npmjs.org/package/gulp-sass
 // - https://www.npmjs.org/package/gulp-merge-media-queries
-// - https://www.npmjs.org/package/gulp-autoprefixer
+// - https://www.npmjs.com/package/gulp-sourcemaps
 // - https://www.npmjs.com/package/gulp-postcss
 // - https://www.npmjs.com/package/autoprefixer
 // - https://www.npmjs.com/package/cssnano
+// - https://www.npmjs.com/package/gulp-rename
 // - https://www.npmjs.com/package/gulp-css-url-adjuster
+// - https://www.npmjs.com/package/gulp-header-license
+// - https://www.npmjs.org/package/gulp-sass-lint
 
 var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var sass = require('gulp-sass');
-var mergeMediaQueries = require('gulp-merge-media-queries');
-var sourcemaps = require('gulp-sourcemaps');
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var cssnano = require("cssnano");
-var rename = require('gulp-rename');
-var cssUrlAdjuster = require('gulp-css-url-adjuster');
-var license = require('gulp-header-license');
 var fs = require('fs');
+
+var sass = require('gulp-sass'),
+    mergeMediaQueries = require('gulp-merge-media-queries'),
+    sourcemaps = require('gulp-sourcemaps'),
+    postcss = require("gulp-postcss"),
+    autoprefixer = require("autoprefixer"),
+    cssnano = require("cssnano"),
+    rename = require('gulp-rename'),
+    cssUrlAdjuster = require('gulp-css-url-adjuster'),
+    license = require('gulp-header-license'),
+    sassLint = require('gulp-sass-lint');
+
 
 var cssNano = [
     cssnano({
@@ -33,13 +37,13 @@ var cssNano = [
 ];
 
 var autoPrefixer = [
-    autoprefixer({ browserslist: ["> 0.5%", "last 2 versions", "Firefox ESR", "not dead"] })
+    autoprefixer({ browsers: ["> 0.5%", "last 2 versions", "Firefox ESR", "not dead"] })
 ];
 
 var sassOptions = {
-    outputStyle: 'expanded',
-    sourceComments: false,
     includePaths: ['node_modules'],
+    outputStyle: 'expanded',
+    sourceComments: false
 }
 
 var sourcemapOptions = {
@@ -47,9 +51,7 @@ var sourcemapOptions = {
 };
 
 gulp.task('sass', function () {
-
     return gulp.src('src/styles/**/*.scss')
-        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(mergeMediaQueries({ use_external: false }))
@@ -62,7 +64,7 @@ gulp.task('sass', function () {
 // :: SASS DIST
 // -------------------------------------------------------------------
 
-gulp.task('sass-dist', function(){
+gulp.task('sass:dist', function(){
 
     // Get package version to generate correct font url
     var nodePackageFile = JSON.parse(fs.readFileSync(__dirname + '/../package.json'));
@@ -70,7 +72,6 @@ gulp.task('sass-dist', function(){
     var nodePackageDescription = nodePackageFile.description;
 
     return gulp.src(['src/styles/**/*.scss', '!src/styles/**/styleguide.scss'])
-        .pipe(plumber())
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(mergeMediaQueries({ use_external: false }))
         .pipe(postcss(autoPrefixer))
@@ -89,21 +90,9 @@ gulp.task('sass-dist', function(){
         .pipe(gulp.dest('dist'));
 });
 
-
-// -------------------------------------------------------------------
-// :: SASS LINT
-// -------------------------------------------------------------------
-// - https://www.npmjs.org/package/gulp-sass-lint
-
-var sassLint = require('gulp-sass-lint');
-
 gulp.task('sass-lint', function () {
 
-    return gulp.src([
-            'src/styles/**/*.scss',
-            '!src/styles/quarks/_quarks.mixins.scss',
-            '!src/styles/base/_base.normalize.scss'
-        ])
+    return gulp.src(['src/styles/**/*.scss'])
         .pipe(sassLint({
             configFile: "./.sass-lint.yml",
             options: {
