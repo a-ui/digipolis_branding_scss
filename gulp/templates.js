@@ -1,26 +1,25 @@
 // -------------------------------------------------------------------
-// :: TEMPLATING
+// :: TEMPLATES
 // -------------------------------------------------------------------
 // - https://www.npmjs.org/package/gulp-nunjucks
+// - https://www.npmjs.com/package/gulp-rename
+// - https://www.npmjs.com/package/list-selectors
+// - https://www.npmjs.com/package/sass-vars-to-js
 
 var gulp = require('gulp');
-var plumber = require('gulp-plumber');
 var glob = require('glob');
-var listSelectors = require('list-selectors');
-var nunjucks = require('gulp-nunjucks');
-var rename = require('gulp-rename');
-var sassVars = require('sass-vars-to-js');
+var fs = require('fs');
+
+var listSelectors = require('list-selectors'),
+    nunjucks = require('gulp-nunjucks'),
+    rename = require('gulp-rename'),
+    sassVars = require('sass-vars-to-js');
 
 gulp.task('render-templates', function () {
-
-    return gulp.src([
-        'src/**/index.njk'
-    ])
-    .pipe(plumber())
-    .pipe(nunjucks.compile(getTemplateData()))
-    .pipe(rename({ extname: ".html" }))
-    .pipe(gulp.dest('.tmp'));
-
+    return gulp.src(['src/**/index.njk'])
+        .pipe(nunjucks.compile(getTemplateData()))
+        .pipe(rename({ extname: ".html" }))
+        .pipe(gulp.dest('.tmp'));
 });
 
 function getTemplateData(){
@@ -28,9 +27,9 @@ function getTemplateData(){
         ICONS: []
     };
 
-    data.VERSION_INFO = JSON.parse(require('fs').readFileSync('package.json', 'utf8'));
+    data.VERSION_INFO = JSON.parse(fs.readFileSync('package.json', 'utf8'));
     data.COLORS = stripDefaults(sassVars('node_modules/@a-ui/core/dist/assets/styles/quarks/_quarks.colors.scss'));
-    data.VARIABLES = sassVars('src/styles/quarks/_quarks.variables.scss');
+    data.VARIABLES = stripDefaults(sassVars('src/styles/quarks/_quarks.variables.scss'));
 
     var icons = glob.sync("node_modules/@a-ui/core/dist/assets/icons/*.svg");
 	for(var i in icons) {
@@ -71,7 +70,6 @@ function getTemplateData(){
     );
 
     return data;
-
 }
 
 function stripDefaults(values) {
