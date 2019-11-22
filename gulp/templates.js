@@ -23,23 +23,23 @@ gulp.task('render-templates', function () {
 });
 
 function getTemplateData(){
-	var data = {
+    var data = {
         ICONS: []
     };
 
     data.VERSION_INFO = JSON.parse(fs.readFileSync('package.json', 'utf8'));
     data.COLORS = stripDefaults(sassVars('node_modules/@a-ui/core/dist/assets/styles/quarks/_quarks.colors.scss'));
-    data.VARIABLES = stripDefaults(sassVars('src/styles/quarks/_quarks.variables.scss'));
+    data.VARIABLES = sassVars('src/styles/quarks/_quarks.variables.scss');
 
     var icons = glob.sync("node_modules/@a-ui/core/dist/assets/icons/*.svg");
-	for(var i in icons) {
-		var filename = icons[i].split('/');
-		filename = filename[filename.length-1];
-		filename = filename.split('.')[0];
-		data.ICONS.push(filename);
-	}
+    for(var i in icons) {
+        var filename = icons[i].split('/');
+        filename = filename[filename.length-1];
+        filename = filename.split('.')[0];
+        data.ICONS.push(filename);
+    }
 
-    listSelectors(['node_modules/@a-ui/core/dist/assets/styles//utilities/_utilities.background.scss'],
+    listSelectors(['node_modules/@a-ui/core/dist/assets/styles/utilities/_utilities.background.scss'],
         { include: ['classes'] },
         function(bgUtilities) {
             for(var bgU in bgUtilities['classes']) {
