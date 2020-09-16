@@ -449,6 +449,11 @@
  */
 
 /**
+ * ARTICLE
+ * -------------------------------------------------------------------
+ */
+
+/**
  * NORMALIZE
  * -------------------------------------------------------------------
  */
@@ -480,7 +485,6 @@ html {
 	box-sizing: border-box;
 	-webkit-text-size-adjust: 100%;
 	   -moz-text-size-adjust: 100%;
-	    -ms-text-size-adjust: 100%;
 	        text-size-adjust: 100%;
 }
 
@@ -4454,6 +4458,15 @@ dl {
 }
 
 /**
+ * FLYOUT FOCUS OUTLINE FIX
+ * -------------------------------------------------------------------
+ */
+
+.m-flyout:focus {
+	outline: none;
+}
+
+/**
  * GALLERY
  * -------------------------------------------------------------------
  */
@@ -5486,6 +5499,72 @@ dl {
  * ORGANISMS
  * -------------------------------------------------------------------
  */
+
+/**
+ * ARTICLE
+ * -------------------------------------------------------------------
+ */
+
+.o-article h1 {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 2.48832rem;
+	font-weight: normal;
+	margin: 3rem 0 1.5rem;
+}
+
+.o-article h2 {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 2.0736rem;
+	font-weight: normal;
+	margin: 3rem 0 1.5rem;
+}
+
+.o-article h3 {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.44rem;
+	font-weight: 700;
+	margin: 1.5rem 0 0.75rem;
+}
+
+.o-article h4 {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin: 1.5rem 0 0.75rem;
+}
+
+.o-article h5 {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	margin: 0.75rem 0 0.375rem;
+}
+
+.o-article h6 {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	margin: 0.75rem 0 0.375rem;
+}
+
+.o-article p {
+	font-size: 1rem;
+	margin: 0 0 0.375rem;
+}
+
+.o-article ul {
+	font-size: 1rem;
+	margin: 0 0 0.375rem;
+}
+
+.o-article ol {
+	font-size: 1rem;
+	margin: 0 0 0.375rem;
+}
+
+.o-article *:first-child {
+	margin-top: 0;
+}
 
 /**
  * FOOTER
