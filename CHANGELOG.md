@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.2.0] - 2020-09-16
+### Added
+- Added an article organism that automatically styles basic html text elements
+
+### Fixed
+- Fixed an issue with the outline of a flyout
+- Fixed an issue where the default settings of the menu organism could not be overwritten
+
+
 ## [4.1.1] - 2020-03-02
 ### Fixed
 - Fixed an issue where checkboxes and radio buttons could move out of bounds
@@ -139,6 +148,7 @@
 - Initial release.
 
 
+[4.2.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v4.2.0
 [4.1.1]: https://github.com/a-ui/digipolis_branding_scss/tree/v4.1.1
 [4.1.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v4.1.0
 [4.0.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v4.0.0
