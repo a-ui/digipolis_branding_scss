@@ -3,14 +3,7 @@
  * -------------------------------------------------------------------
  */
 
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css');
-
-
-/**
- * FONT AWESOME
- * -------------------------------------------------------------------
- */
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
@@ -19,6 +12,8 @@
  * -------------------------------------------------------------------
  */
 
+@import 'base/base.fonts';
+// @import 'base/base.antwerpen-icons';
 @import '@a-ui/core/dist/assets/styles/base/base.layout';
 @import '@a-ui/core/dist/assets/styles/base/base.media';
 @import '@a-ui/core/dist/assets/styles/base/base.typography';
