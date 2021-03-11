@@ -751,17 +751,42 @@
 
 @media screen and (min-width: 75rem) {
 
-.d-toc__cell {
-	flex: 0 0 16.66667%;
+	.d-toc__cell {
+		flex: 0 0 16.66667%;
+	}
+
+	.d-list__colors > li {
+		width: 33.33333%;
+	}
+
+	.d-list__variables > li {
+		width: 33.33333%;
+	}
+
 }
 
-.d-list__colors > li {
-	width: 33.33333%;
+.d-article {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	width: 100%;
+	height: 30rem;
+	background: #f7a303;
+	overflow: hidden;
+  }
+  
+.d-article__image {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.d-list__variables > li {
-	width: 33.33333%;
+.d-article__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 3rem;
 }
-
-}
-

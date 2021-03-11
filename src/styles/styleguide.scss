@@ -342,3 +342,57 @@
   overflow-y: hidden;
   padding: 0;
 }
+
+
+.d-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
+
+  @include at($screen-md) {
+    flex-direction: row-reverse;
+    height: 35rem;
+  }
+
+  &__title {
+    margin-bottom: $spacer-md;
+  }
+
+  &__image {
+    align-items: center;
+    display: flex;
+    height: 20rem;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    @include at($screen-md) {
+      flex: 1 0 50%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    max-width: 75%;
+    padding: 0 $spacer-md;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: $spacer-md;
+  }
+
+  &--alt {
+    flex-direction: column-reverse;
+  }
+}
