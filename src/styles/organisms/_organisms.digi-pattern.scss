@@ -3,8 +3,7 @@
  * -------------------------------------------------------------------
  */
 
-$digi-pattern-border-width: 3.2px;
-$digi-pattern-border: $digi-pattern-border-width solid $white;
+$digi-pattern-border: $digi-pattern-border-width solid $digi-pattern-border-color;
 $digi-pattern-border-offset: 2 * $digi-pattern-border-width;
 $digi-pattern-border-offset-x2: 2 * $digi-pattern-border-offset;
 
@@ -13,7 +12,7 @@ $digi-pattern-border-offset-x2: 2 * $digi-pattern-border-offset;
   z-index: 1;
 
   &__behind {
-    z-index: -2;
+    z-index: -1;
   }
 
   &__front {

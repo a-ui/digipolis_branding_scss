@@ -89,7 +89,12 @@
     padding: $spacer-xs / 4 $spacer-xs / 2;
   }
 
-  @include at($screen-xs) {
+  @include at($screen-sm) {
+    padding-bottom: $spacer * 2.5;
+    padding-top: $spacer * 3;
+  }
+
+  @include at($screen-xl) {
     padding-bottom: $spacer * 2.5;
     padding-top: $spacer * 2.5;
   }
@@ -395,4 +400,8 @@
   &--alt {
     flex-direction: column-reverse;
   }
+}
+
+.u-wrapper {
+  padding-left: 0;
 }
