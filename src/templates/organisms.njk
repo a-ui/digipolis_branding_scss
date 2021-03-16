@@ -106,7 +106,19 @@
 
         <div class="d">
             <div>
-                <p>Digi-pattern description</p>
+                <p>
+                    Helper classes to create a Digi-pattern effect in your layout.<br />
+                    Add the <code>o-digi-pattern</code> on the top layer element and set the <code>o-digi-pattern__title</code> class on the element the pattern should start from.<br />
+                    Make sure to add an element with the <code>o-digi-pattern__shapes</code> as a direct child of your starting element.<br />
+                </p>
+                <p>
+                    Text should always be displayed in front of the pattern, images and other content should be displayed behind the pattern.<br />
+                    You can use the <code>o-digi-pattern__front</code> and <code>o-digi-pattern__behind</code> helper classes or set the z-index yourself.
+                </p>
+                <p>
+                    The Digi-pattern works for the most part on relative positioning and (vertical) dimensions so you might have to tweak your base layout to accomodate the pattern layout.<br />
+                    The border width is .1875rem (~3.2px) and is exposed as a variable (<code>$digi-pattern-border-width</code>) in case you want to tweak the pattern or want to create new patterns.
+                </p>
             </div>
             <div>
                 <pre class="a-pre a-pre--scrollable"><code class="html">&lt;div class="u-bg-quinary o-digi-pattern"&gt;
@@ -155,7 +167,9 @@
         </div>
         <div class="d">
             <div>
-                <p>Digi-pattern alt description</p>
+                <p>
+                    An alternative version of the Digi-pattern, using less complex shapes in desktop view and a more complex pattern on mobile.
+                </p>
             </div>
             <div>
                 <pre class="a-pre a-pre--scrollable"><code class="html">&lt;div class="u-bg-quinary o-digi-pattern o-digi-pattern--alt"&gt;
