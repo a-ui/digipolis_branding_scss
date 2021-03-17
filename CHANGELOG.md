@@ -1,7 +1,12 @@
 # Changelog
 
-## [4.2.1] - 2020-09-22
+## [5.0.0] - 2021-03-16
+### Added
+- [BREAKING] Introducing the new Antwerpen Digipolis branding
+- Added the new Digi pattern component which is exclusive for Antwerpen Digipolis apps
 
+
+## [4.2.1] - 2020-09-22
 ### Fixed
 - Fixed a margin issue when an article organism would contain multiple nested levels
 
@@ -154,6 +159,7 @@
 - Initial release.
 
 
+[5.0.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v5.0.0
 [4.2.1]: https://github.com/a-ui/digipolis_branding_scss/tree/v4.2.1
 [4.1.1]: https://github.com/a-ui/digipolis_branding_scss/tree/v4.1.1
 [4.1.0]: https://github.com/a-ui/digipolis_branding_scss/tree/v4.1.0

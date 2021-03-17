@@ -39,7 +39,7 @@ function getTemplateData(){
         data.ICONS.push(filename);
     }
 
-    listSelectors(['node_modules/@a-ui/core/dist/assets/styles/utilities/_utilities.background.scss'],
+    listSelectors(['src/styles/utilities/_utilities.background.scss'],
         { include: ['classes'] },
         function(bgUtilities) {
             for(var bgU in bgUtilities['classes']) {
